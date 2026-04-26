@@ -6,12 +6,13 @@ Homebrew tap for [Wisp](https://github.com/sulemaanhamza/wisp) — a dead-simple
 
 ```sh
 brew tap sulemaanhamza/wisp
-brew install --cask --no-quarantine wisp
+brew install --cask wisp
+xattr -d com.apple.quarantine /Applications/Wisp.app
 ```
 
-The `--no-quarantine` flag matters: Wisp is unsigned (no Apple Developer ID), so without it Gatekeeper will refuse to launch the app with a "cannot be verified" warning. Brew applies the quarantine attribute by default these days — `--no-quarantine` opts out, which is the standard pattern for unsigned apps from personal taps.
+The third line matters. Wisp is unsigned (no Apple Developer ID), and Homebrew applies macOS's quarantine attribute by default to cask installs — without removing it, Gatekeeper refuses to launch the app with a "cannot be verified" warning. The `xattr` command strips that attribute. (Homebrew used to support `--no-quarantine` for this; it's been disabled in recent versions.)
 
-After install, ⌥Space anywhere on macOS to summon the panel, type, Esc to dismiss.
+After that, ⌥Space anywhere on macOS to summon the panel, type, Esc to dismiss.
 
 ## Update
 
