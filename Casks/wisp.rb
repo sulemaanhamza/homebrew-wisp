@@ -1,6 +1,6 @@
 cask "wisp" do
-  version "0.1.31"
-  sha256 "051047225398b8522dbf9f6230619bf2b5cd57a7b1954ada4147e1c53e17be91"
+  version "0.1.32"
+  sha256 "2e69af843d8f219aee32ff295c602dc204fdfe3e87c5545af536bd4a54c88ed8"
 
   url "https://github.com/sulemaanhamza/wisp/releases/download/v#{version}/Wisp-#{version}.zip"
   name "Wisp"
