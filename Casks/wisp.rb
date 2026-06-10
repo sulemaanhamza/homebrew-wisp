@@ -7,7 +7,7 @@ cask "wisp" do
   desc "Dead-simple macOS scratchpad — menu bar, ⌥Space to summon, type, dismiss"
   homepage "https://github.com/sulemaanhamza/wisp"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Wisp.app"
 
